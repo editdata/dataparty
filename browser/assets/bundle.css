@@ -909,3 +909,51 @@ select.full-width {
   margin-right: auto;
   width: 100%;
 }
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #fcfbfa;
+}
+
+.site-header {
+  background-color: #FD7400;
+  color: #fff;
+  padding: 10px 10px 8px 10px;
+}
+
+.site-header a {
+  color: #fff;
+}
+
+.site-logo-image {
+  width: 25px;
+  height: auto;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.site-title {
+  margin: 0px;
+  font-size: 21px;
+  font-weight: 500;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.site-nav {
+  margin: 0px;
+  padding: 0px;
+  float: right;
+}
+
+.site-nav .nav-item {
+  display: inline;
+}
+
+.site-main {
+  
+}
+
+.site-footer {
+  
+}

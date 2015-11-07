@@ -1,6 +1,12 @@
 var extend = require('xtend')
 
 var reducers = {
+  set_url: function (state, action) {
+    return extend(state, { url: action.params })
+  },
+  set_screen: function (state, action) {
+    return extend(state, { screen: action.screen })
+  },
   error: function (state, action) {
     return extend(state, { error: action.error })
   }

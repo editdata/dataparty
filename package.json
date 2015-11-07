@@ -6,8 +6,8 @@
   "main": "./app.js",
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
-    "watch-css": "cssnext browser/style.css > browser/bundle.css",
-    "browser": "budo browser/index.js --dir browser --live --onupdate 'npm run watch-css'",
+    "watch-css": "cssnext browser/assets/style.css > browser/assets/bundle.css",
+    "browser": "budo browser/index.js --dir browser --live --onupdate 'npm run watch-css' --pushstate",
     "deploy": "modulus deploy",
     "start": "node app.js"
   },
@@ -20,6 +20,7 @@
     "data-form": "github:editdata/data-form",
     "data-grid": "github:editdata/data-grid",
     "data-map": "github:editdata/data-map",
+    "history-state": "^1.0.0",
     "normalize.css": "^3.0.3",
     "pathname-match": "^1.1.0",
     "query-string": "^3.0.0",
@@ -29,7 +30,8 @@
     "virtual-dom": "^2.1.1",
     "virtual-raf": "^2.0.3",
     "wayfarer": "^5.0.1",
-    "xhr": "^2.0.5"
+    "xhr": "^2.0.5",
+    "xtend": "^4.0.1"
   },
   "devDependencies": {
     "browserify": "^12.0.1",
