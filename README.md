@@ -1,3 +1,7 @@
+# DataParty
+
+Edit a dataset with friends in real time.
+
 ## Quick Start
 
 ~~~sh
