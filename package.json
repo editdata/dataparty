@@ -6,11 +6,14 @@
   "main": "./app.js",
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
+    "watch-css": "cssnext browser/style.css > browser/bundle.css",
+    "browser": "budo browser/index.js --dir browser --live --onupdate 'npm run watch-css'",
     "deploy": "modulus deploy",
     "start": "node app.js"
   },
   "dependencies": {
     "basscss-grid": "^1.0.3",
+    "budo": "^6.0.0",
     "catch-links": "^2.0.0",
     "csskit": "^1.1.1",
     "data-editor": "github:editdata/data-editor",
