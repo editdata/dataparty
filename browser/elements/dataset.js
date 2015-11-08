@@ -14,6 +14,18 @@ module.exports = function (h) {
   emitter(dataset)
   var menu = require('./menu')(h)
 
+  grid.on('click', function (e, row) {
+    actions.setActiveRow(e.target, row)
+  })
+
+  form.on('close', function () {
+    actions.removeActiveRow()
+  })
+
+  form.on('update', function (e, a, b, c) {
+    console.log(e, a, b, c)
+  })
+
   dataset.render = function dataset_render (state) {
     if (!state.dataset) {
       state.dataset = {
@@ -26,9 +38,11 @@ module.exports = function (h) {
 
     var wrapper = 'div.view-wrapper' + (state.activeRow ? '.card-open' : '.card-closed')
     var gridTree = state.dataset.data ? grid.render(state.dataset) : null
+
     return h(wrapper, [
       menu.render(state),
-      gridTree
+      gridTree,
+      form.render(state)
     ])
   }
 
