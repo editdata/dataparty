@@ -693,221 +693,146 @@ th {
   /* Gray scale */
 
 }
-.button,
-.button:link,
-.button:visited,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-  background-color: #fff;
-  border: 1px solid #aaa;
-  border-radius: 0.2em;
-  box-sizing: border-box;
-  color: #666;
-  cursor: pointer;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 0.9em;
-  font-weight: 500;
-  height: 50px;
-  letter-spacing: 0.05em;
-  line-height: 50px;
-  margin-bottom: 0.6em;
-  padding: 0px 20px 0px 20px;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: top;
+#data-grid {
+  height: 100%;
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.data-grid-properties {
+  
+}
+
+.data-grid-rows {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
   white-space: nowrap;
+  height: 100%;
+  margin-bottom: 40px;
 }
 
-.button:hover,
-.button:focus,
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
-button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
-  border: 1px solid #444;
-  color: #555;
+.data-grid-rows li.top,
+.data-grid-rows li.bottom {
+  list-style-type: none;
 }
 
-.button:active,
-button:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-input[type="button"]:active {
-  color: #000;
-  border: 1px solid #000;
+.data-grid-row {
+  list-style-type: none;
+  height: 30px;
 }
 
-.button.small,
-button.small,
-input[type="submit"].small,
-input[type="reset"].small,
-input[type="button"].small {
-  height: 35px;
-  line-height: 35px;
-  padding: 0 10px;
-  font-size: .85em;
-  letter-spacing: 0;
+.data-grid-row:last-child {
+  border-bottom: 0px;
 }
 
-.button.medium,
-button.medium,
-input[type="submit"].medium,
-input[type="reset"].medium,
-input[type="button"].medium {
-  height: 55px;
-  font-size: 1em;
-  line-height: 55px;
-  padding: 0px 22px;
+.data-grid-row-items {
+  margin: 0px;
+  padding: 0px;
+  height: 30px;
 }
 
-.button.large,
-button.large,
-input[type="submit"].large,
-input[type="reset"].large,
-input[type="button"].large {
-  height: 60px;
-  font-size: 1.2em;
-  line-height: 60px;
-  padding: 0px 28px;
+.data-grid-row-items:hover {
+  background-color: #fcfcfc;
+  cursor: pointer;
 }
 
-.button.full-width,
-.button.full-width:link,
-button.full-width,
-input[type="submit"].full-width,
-input[type="reset"].full-width,
-input[type="button"].full-width {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-textarea,
-select {
-  background-color: #fff;
-  border: 1px solid #aaa;
-  border-radius: 0.2em;
-  box-shadow: none;
-  box-sizing: border-box;
-  color: #666;
-  font-family: sans-serif;
-  font-size: 0.9em;
-  font-weight: 300;
-  height: 50px;
-  line-height: 50px;
-  margin-bottom: 0.6em;
-  padding: 2px 15px 0px 15px;
-  vertical-align: top;
-}
-
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-select {
-  margin-right: 4px;
-}
-
-textarea {
-  min-height: 100px;
-  padding: 10px 12px;
-  line-height: 2;
-}
-
-fieldset {
+.data-grid-rows .data-field {
+  font-size: 10px;
   border: 0px;
-  margin-bottom: 1em;
+  padding: 0px 8px;
+  margin: 0px;
+  width: 150px;
+  height: 30px;
+  max-height: 30px;
+  min-height: 30px;
+  line-height: 30px;
+  background: none;
+  resize: none;
+  outline: none;
+  overflow: hidden;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
-label,
-legend {
-  font-family: sans-serif;
-  display: block;
-  font-size: 0.9em;
-  margin-bottom: 0.3em;
+.data-grid-rows .data-field.readonly {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.data-grid-rows .data-field:focus {
+  background-color: #f1f1ff;
+}
+
+.data-grid-rows .data-field:hover {
+  background-color: #f1f1ff;
   color: #333;
 }
 
-input[type="email"].small,
-input[type="number"].small,
-input[type="search"].small,
-input[type="text"].small,
-input[type="tel"].small,
-input[type="url"].small,
-input[type="password"].small,
-textarea.small,
-select.small {
-  height: 35px;
-  font-size: 0.7em;
-  line-height: 35px;
-  padding: 2px 10px 0px 10px;
+.data-grid-rows .data-field:last-child {
+  border-right: 0px;
 }
 
-input[type="email"].medium,
-input[type="number"].medium,
-input[type="search"].medium,
-input[type="text"].medium,
-input[type="tel"].medium,
-input[type="url"].medium,
-input[type="password"].medium,
-textarea.medium,
-select.medium {
-  height: 55px;
-  font-size: 1em;
-  line-height: 55px;
+.active-cell {
+  background-color: #f1f1ff;
 }
 
-input[type="email"].large,
-input[type="number"].large,
-input[type="search"].large,
-input[type="text"].large,
-input[type="tel"].large,
-input[type="url"].large,
-input[type="password"].large,
-textarea.large,
-select.large {
-  height: 60px;
-  font-size: 1.2em;
-  line-height: 60px;
+.data-grid-properties {
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+  height: 40px;
 }
 
-input[type="email"].full-width,
-input[type="number"].full-width,
-input[type="search"].full-width,
-input[type="text"].full-width,
-input[type="tel"].full-width,
-input[type="url"].full-width,
-input[type="password"].full-width,
-textarea.full-width,
-select.full-width {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+.data-grid-property {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 8px;
+  display: inline-block;
+  font-size: 15px;
+  list-style-type: none;
+  overflow-x: hidden;
+  font-weight: 700;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #888;
+  background-color: #fefefc;
+  cursor: pointer;
+}
+
+.data-grid-property:hover {
+  
+}
+
+.data-grid-property-name {
+  color: #444;
+}
+
+.data-grid-property:hover .data-grid-property-name {
+  color: #222;
+}
+
+.data-grid-property-configure {
+  float: right;
+  margin-top: 11px;
+  margin-right: 0px;
+  font-size: 14px;
+  display: none;
+  border: 0px;
+  background: none;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.data-grid-property:hover .data-grid-property-configure {
+  display: inherit;
+}
+
+.data-grid-property-configure:hover {
+  color: #222;
 }
 
 body {
@@ -948,6 +873,23 @@ body {
 
 .site-nav .nav-item {
   display: inline;
+}
+
+.menu {
+  margin: 0px;
+  padding: 0px;
+  color: #FD7400;
+  border-bottom: 2px solid #FD7400;
+}
+
+.menu-item {
+  display: inline-block;
+}
+
+.menu-item button {
+  border: 0px;
+  background-color: transparent;
+  padding: 10px;
 }
 
 .site-main {

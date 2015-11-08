@@ -5,6 +5,8 @@ var config = require('../../config')
 
 var initialState = extend(config, {
   screen: 'landing',
+  dataset: null,
+  activeRow: null,
   url: {}
 })
 
