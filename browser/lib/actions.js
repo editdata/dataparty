@@ -1,5 +1,25 @@
+var cuid = require('cuid')
 var store = require('./store')
+var router = require('./router')
 var actions = {}
+
+/**
+* Redirect url to specified path.
+* @name actions.newDataset
+* @example
+* actions.newDataset()
+*/
+actions.newDataset = function actions_newDataset () {
+  var dataset = {
+    key: cuid(),
+    metadata: {},
+    properties: {},
+    data: []
+  }
+
+  store.dispatch({ type: 'new_dataset', dataset: dataset })
+  router.go('/dataset/' + dataset.key)
+}
 
 /**
 * Redirect url to specified path.
@@ -12,12 +32,15 @@ actions.setUrl = function actions_setUrl (params) {
 }
 
 /**
-* Set screen of application.
+* Set screen of application. Meant to be used inside of route handlers.
 * @name actions.setScreen
+* @param {String} screen
+* @param {Object} params
 * @example
-* actions.setScreen('map')
+* actions.setScreen('map', params)
 */
-actions.setScreen = function actions_setUrl (screen) {
+actions.setScreen = function actions_setScreen (screen, params) {
+  actions.setUrl(params)
   store.dispatch({ type: 'set_screen', screen: screen })
 }
 

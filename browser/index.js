@@ -1,5 +1,6 @@
 var h = require('virtual-dom/h')
 var loop = require('virtual-raf')
+
 var store = require('./lib/store')
 var actions = require('./lib/actions')
 var router = require('./lib/router')
@@ -9,7 +10,8 @@ var header = require('./elements/header')(h)
 
 var screens = {
   landing: require('./elements/landing')(h),
-  about: require('./elements/about')(h)
+  about: require('./elements/about')(h),
+  dataset: require('./elements/dataset')(h)
 }
 
 function render (state) {
@@ -27,17 +29,15 @@ store.subscribe(function () {
 })
 
 router.on('/', function (params) {
-  actions.setScreen('landing')
+  actions.setScreen('landing', params)
 })
 
-router.on('/dataset/:dataset', function (params) {})
-
-router.on('/dataset/:dataset/map', function (params) {})
-
-router.on('/dataset/:dataset/grid', function (params) {})
+router.on('/dataset/:dataset', function (params) {
+  actions.setScreen('dataset', params)
+})
 
 router.on('/about', function (params) {
-  actions.setScreen('about')
+  actions.setScreen('about', params)
 })
 
 var tree = loop(store.getState(), render, require('virtual-dom'))
