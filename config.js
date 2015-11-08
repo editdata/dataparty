@@ -3,7 +3,8 @@ var extend = require('extend')
 var config = {
   shared: {
     site: {
-      title: 'DataParty'
+      title: 'DataParty',
+      url: 'http://localhost:3333'
     }
   },
   production: {},
