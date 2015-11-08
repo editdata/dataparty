@@ -9,6 +9,29 @@ actions.socket = io(store.getState().site.url);
 console.log("actions.socket:", actions.socket)
 
 /**
+* Set active row.
+* @name actions.setActiveRow
+* @example
+* actions.setActiveRow({
+*   el: {}, // src dom target
+*   data: {} // row object
+* })
+*/
+actions.setActiveRow = function actions_setActiveRow (el, row) {
+  store.dispatch({ type: 'set_active_row', row: { el: el, data: row } })
+}
+
+/**
+* Remove active row.
+* @name actions.removeActiveRow
+* @example
+* actions.removeActiveRow()
+*/
+actions.removeActiveRow = function actions_removeActiveRow () {
+  store.dispatch({ type: 'remove_active_row' })
+}
+
+/**
 * Create a popup
 * @name actions.createPopup
 * @example
