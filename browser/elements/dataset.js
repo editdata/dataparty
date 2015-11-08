@@ -25,10 +25,10 @@ module.exports = function (h) {
     }
 
     var wrapper = 'div.view-wrapper' + (state.activeRow ? '.card-open' : '.card-closed')
-
+    var gridTree = state.dataset.data ? grid.render(state.dataset) : null
     return h(wrapper, [
       menu.render(state),
-      grid.render(state.dataset)
+      gridTree
     ])
   }
 
