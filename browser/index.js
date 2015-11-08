@@ -3,7 +3,7 @@ var loop = require('virtual-raf')
 
 var store = require('./lib/store')
 var actions = require('./lib/actions')
-var router = require('./lib/router')
+var router = require('./lib/router' )
 
 var app = require('./elements/app')(h)
 var header = require('./elements/header')(h)

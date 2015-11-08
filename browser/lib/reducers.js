@@ -3,6 +3,13 @@ var clone = require('clone')
 var editor = require('data-editor')()
 
 var reducers = {
+  remove_active_row: function (state, action) {
+    state.activeRow = null
+    return clone(state)
+  },
+  set_active_row: function (state, action) {
+    return extend(state, { activeRow: action.row })
+  },
   create_row: function (state, action) {
     var dataset = editor.rows.create(state.dataset, {})
     return extend(state, { dataset: dataset })
@@ -19,6 +26,13 @@ var reducers = {
     return clone(state)
   },
   new_dataset: function (state, action) {
+    if (!action.dataset.data.length) {
+      action.dataset.data = [
+        { a: 'edit', b: 'these', c: 'examples!' },
+        { a: null, b: null, c: null },
+        { a: null, b: null, c: null }
+      ]
+    }
     var dataset = editor.init(action.dataset)
     return extend(state, { dataset: dataset })
   },

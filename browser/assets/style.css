@@ -1,10 +1,36 @@
 @import "normalize.css";
 @import "basscss-grid";
 @import "data-grid";
+@import "data-form";
 
+html,
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font: 18px/1.5 'Source Sans Pro', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  color: #444;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
   background-color: #fcfbfa;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app, #editor-wrapper, .view-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.view-wrapper {
+  position: fixed;
+}
+
+.view-wrapper.card-open {
+  width: 57%;
 }
 
 .site-header {
@@ -109,4 +135,34 @@ body {
 section.popup {
   clear: both;
   padding: 10px 0px;
+}
+
+.data-grid-rows .data-field:focus,
+.data-grid-rows .data-field:hover {
+  background-color: #fff;
+}
+
+.data-grid-rows .active-cell {
+  background-color: #fff;
+}
+
+#data-form-wrapper {
+  position: fixed;
+  width: 43%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: -2px 3px 5px rgba(0,0,0,0.1);
+}
+
+.data-form-header {
+  margin-bottom: 30px;
+}
+
+.data-form-field-wrapper {
+  margin-bottom: 30px;
 }

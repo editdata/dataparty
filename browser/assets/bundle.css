@@ -715,6 +715,10 @@ th {
   margin-bottom: 40px;
 }
 
+.data-grid-rows.readonly .data-field {
+  cursor: pointer;
+}
+
 .data-grid-rows li.top,
 .data-grid-rows li.bottom {
   list-style-type: none;
@@ -736,12 +740,11 @@ th {
 }
 
 .data-grid-row-items:hover {
-  background-color: #fcfcfc;
   cursor: pointer;
 }
 
 .data-grid-rows .data-field {
-  font-size: 10px;
+  font-size: 12px;
   border: 0px;
   padding: 0px 8px;
   margin: 0px;
@@ -763,22 +766,11 @@ th {
   overflow: hidden;
 }
 
-.data-grid-rows .data-field:focus {
-  background-color: #f1f1ff;
-}
+.data-grid-rows .data-field:focus {}
 
-.data-grid-rows .data-field:hover {
-  background-color: #f1f1ff;
-  color: #333;
-}
+.data-grid-rows .data-field:hover {}
 
-.data-grid-rows .data-field:last-child {
-  border-right: 0px;
-}
-
-.active-cell {
-  background-color: #f1f1ff;
-}
+.active-cell {}
 
 .data-grid-properties {
   white-space: nowrap;
@@ -799,7 +791,6 @@ th {
   font-weight: 700;
   border-right: 1px solid #aaa;
   border-bottom: 1px solid #888;
-  background-color: #fefefc;
   cursor: pointer;
 }
 
@@ -817,8 +808,7 @@ th {
 
 .data-grid-property-configure {
   float: right;
-  margin-top: 11px;
-  margin-right: 0px;
+  margin: 0px;
   font-size: 14px;
   display: none;
   border: 0px;
@@ -834,10 +824,93 @@ th {
 .data-grid-property-configure:hover {
   color: #222;
 }
+#data-form-wrapper {
 
+}
+
+.data-form-header {
+
+}
+
+.data-form-actions {
+  margin: 20px 0px 0px 0px;
+  padding: 0px;
+  border: 1px solid #fafafa;
+  background-color: #fff;
+}
+
+.data-form-action {
+  border: 0px;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  display: list-item;
+  padding: 0px 15px;
+  background-color: #fff;
+  border-right: 1px solid #fafafa;
+  color: #444;
+  margin-bottom: 0px;
+}
+
+.data-form-action:hover {
+  color: #000;
+  background-color: #f3f3f1;
+  border: 0px;
+}
+
+.data-form-fields {}
+
+.data-form-label {
+  display: block;
+}
+
+.data-form-fields .data-field {
+  margin: 0px 0px 10px 0px;
+  border: 1px solid #efefef;
+  padding: 10px;
+  width: 100%;
+  height: 100px;
+  font-size: 14px;
+  outline: 0;
+  color: #aaa;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.data-form-fields .data-field:focus {
+  border: 1px solid #c1c1cc;
+  color: #333;
+}
+
+html,
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font: 18px/1.5 'Source Sans Pro', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  color: #444;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
   background-color: #fcfbfa;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app, #editor-wrapper, .view-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.view-wrapper {
+  position: fixed;
+}
+
+.view-wrapper.card-open {
+  width: 57%;
 }
 
 .site-header {
@@ -943,4 +1016,34 @@ body {
 section.popup {
   clear: both;
   padding: 10px 0px;
+}
+
+.data-grid-rows .data-field:focus,
+.data-grid-rows .data-field:hover {
+  background-color: #fff;
+}
+
+.data-grid-rows .active-cell {
+  background-color: #fff;
+}
+
+#data-form-wrapper {
+  position: fixed;
+  width: 43%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: -2px 3px 5px rgba(0,0,0,0.1);
+}
+
+.data-form-header {
+  margin-bottom: 30px;
+}
+
+.data-form-field-wrapper {
+  margin-bottom: 30px;
 }
