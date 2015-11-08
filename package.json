@@ -12,6 +12,8 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "accounts-api": "0.1.0",
+    "appa": "^1.0.1",
     "basscss-grid": "^1.0.3",
     "budo": "^6.0.0",
     "catch-links": "^2.0.0",
@@ -21,6 +23,7 @@
     "data-grid": "github:editdata/data-grid",
     "data-map": "github:editdata/data-map",
     "history-state": "^1.0.0",
+    "level": "^1.3.0",
     "normalize.css": "^3.0.3",
     "pathname-match": "^1.1.0",
     "query-string": "^3.0.0",
