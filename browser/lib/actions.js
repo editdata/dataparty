@@ -3,6 +3,11 @@ var store = require('./store')
 var router = require('./router')
 var actions = {}
 
+var io = require('socket.io-client');
+console.log("store.getState().site.url:", store.getState().site.url)
+actions.socket = io(store.getState().site.url);
+console.log("actions.socket:", actions.socket)
+
 /**
 * Create a new row in a dataset
 * @name actions.createRow
@@ -39,6 +44,7 @@ actions.newDataset = function actions_newDataset () {
 
   store.dispatch({ type: 'new_dataset', dataset: dataset })
   router.go('/dataset/' + dataset.key)
+  actions.socket.emit('room', { hello: 'world'})
 }
 
 /**
