@@ -19,7 +19,7 @@ var reducers = {
     return clone(state)
   },
   new_dataset: function (state, action) {
-    var dataset = editor.format(action.dataset)
+    var dataset = editor.init(action.dataset)
     return extend(state, { dataset: dataset })
   },
   set_url: function (state, action) {
