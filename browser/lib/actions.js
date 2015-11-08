@@ -9,13 +9,33 @@ actions.socket = io(store.getState().site.url);
 console.log("actions.socket:", actions.socket)
 
 /**
+* Create a popup
+* @name actions.createPopup
+* @example
+* actions.createPopup()
+*/
+actions.createPopup = function actions_createPopup (popup) {
+  store.dispatch({ type: 'create_popup', popup: popup })
+}
+
+/**
+* Remove a popup
+* @name actions.createPopup
+* @example
+* actions.createPopup()
+*/
+actions.removePopup = function actions_removePopup () {
+  store.dispatch({ type: 'remove_popup' })
+}
+
+/**
 * Create a new row in a dataset
 * @name actions.createRow
 * @example
 * actions.createRow()
 */
 actions.createRow = function actions_createRow () {
-  
+  store.dispatch({ type: 'create_row' })
 }
 
 /**
@@ -24,8 +44,8 @@ actions.createRow = function actions_createRow () {
 * @example
 * actions.createProperty()
 */
-actions.createProperty = function actions_createProperty () {
-  
+actions.createProperty = function actions_createProperty (property) {
+  store.dispatch({ type: 'create_property', property: property })
 }
 
 /**
