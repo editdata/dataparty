@@ -4,6 +4,26 @@ var router = require('./router')
 var actions = {}
 
 /**
+* Create a new row in a dataset
+* @name actions.createRow
+* @example
+* actions.createRow()
+*/
+actions.createRow = function actions_createRow () {
+  
+}
+
+/**
+* Create a new property in a dataset
+* @name actions.createProperty
+* @example
+* actions.createProperty()
+*/
+actions.createProperty = function actions_createProperty () {
+  
+}
+
+/**
 * Redirect url to specified path.
 * @name actions.newDataset
 * @example

@@ -1,6 +1,12 @@
 var extend = require('xtend')
 
 var reducers = {
+  create_row: function (state, action) {
+    // todo
+  },
+  create_property: function (state, action) {
+    // todo
+  },
   new_dataset: function (state, action) {
     return extend(state, { dataset: action.dataset })
   },
@@ -21,7 +27,7 @@ var reducers = {
 
 module.exports = function (state, action) {
   if (action.type.indexOf('@@redux') > -1) return state
-  console.log('%c action: ', 'background-color:#efefef; color:#222;', action.type)
+  console.log('%c action: ', 'background-color:#efefef; color:#222;', action.type, action)
   var newState = reducers[action.type](state, action)
   return newState
 }

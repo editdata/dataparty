@@ -4,7 +4,7 @@ var reducers = require('./reducers')
 var config = require('../../config')
 
 var initialState = extend(config, {
-  screen: 'landing',
+  screen: null,
   dataset: null,
   activeRow: null,
   url: {}
