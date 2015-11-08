@@ -60,6 +60,10 @@ body {
   outline: 0px;
 }
 
+.menu-item button:hover {
+  background-color: #fff;
+}
+
 .site-main {
   
 }

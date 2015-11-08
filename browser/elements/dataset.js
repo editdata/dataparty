@@ -7,7 +7,6 @@ var map = require('data-map')({
   center: [47.621958, -122.33636]
 })
 
-
 var actions = require('../lib/actions')
 
 module.exports = function (h) {

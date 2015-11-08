@@ -12,7 +12,7 @@ module.exports = function (h) {
         onclick: function (e) {
           actions.newDataset()
         }
-      }, 'Start your data party!')
+      }, 'Start a party!')
     ])
   }
 
