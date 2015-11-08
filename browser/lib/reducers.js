@@ -8,7 +8,6 @@ var reducers = {
     return extend(state, { dataset: dataset })
   },
   create_property: function (state, action) {
-    console.log(state.dataset)
     var dataset = editor.properties.create(state.dataset, action.property)
     return extend(state, { dataset: dataset })
   },
