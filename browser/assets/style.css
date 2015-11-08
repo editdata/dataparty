@@ -1,6 +1,6 @@
 @import "normalize.css";
 @import "basscss-grid";
-@import "csskit";
+@import "data-grid";
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -40,6 +40,28 @@ body {
 
 .site-nav .nav-item {
   display: inline;
+}
+
+.menu {
+  margin: 0px;
+  padding: 0px;
+  color: #FD7400;
+  border-bottom: 2px solid #FD7400;
+}
+
+.menu-item {
+  display: inline-block;
+}
+
+.menu-item button {
+  border: 0px;
+  background-color: transparent;
+  padding: 10px;
+  outline: 0px;
+}
+
+.menu-item button:hover {
+  background-color: #fff;
 }
 
 .site-main {
