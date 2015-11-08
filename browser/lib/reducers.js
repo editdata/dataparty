@@ -1,14 +1,27 @@
 var extend = require('xtend')
+var clone = require('clone')
+var editor = require('data-editor')()
 
 var reducers = {
   create_row: function (state, action) {
-    // todo
+    var dataset = editor.rows.create(state.dataset, {})
+    return extend(state, { dataset: dataset })
   },
   create_property: function (state, action) {
-    // todo
+    console.log(state.dataset)
+    var dataset = editor.properties.create(state.dataset, action.property)
+    return extend(state, { dataset: dataset })
+  },
+  create_popup: function (state, action) {
+    return extend(state, { popup: action.popup })
+  },
+  remove_popup: function (state, action) {
+    state.popup = null
+    return clone(state)
   },
   new_dataset: function (state, action) {
-    return extend(state, { dataset: action.dataset })
+    var dataset = editor.format(action.dataset)
+    return extend(state, { dataset: dataset })
   },
   set_url: function (state, action) {
     return extend(state, { url: action.params })
