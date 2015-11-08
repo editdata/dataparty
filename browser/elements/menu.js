@@ -14,7 +14,10 @@ module.exports = function createMenu (h) {
       }, [h('button', [h('i.fa.fa-plus'), ' new row'])]),
       h('li.menu-item', {
         onclick: function () {
-          actions.createProperty()
+          actions.createPopup({
+            title: 'Create a new column',
+            subtitle: 'Choose the column name'
+          })
         }
       }, [h('button', [h('i.fa.fa-plus'), ' new column'])])
     ])

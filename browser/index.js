@@ -19,10 +19,17 @@ router.start()
 function render (state) {
   console.log('%c render state: ', 'background-color:black; color:white;', state)
 
-  return app.render([
+  var elements = [
     header.render(state),
     screens[state.screen].render(state)
-  ])
+  ]
+
+  if (state.popup) {
+    var popup = require('./elements/popup-create-column')(h, state.popup)
+    elements.push(popup)
+  }
+
+  return app.render(elements)
 }
 
 router.on('/', function (params) {
