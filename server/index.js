@@ -24,12 +24,12 @@ function Township () {
   })
 
   var cb = function () {
-    console.log('server listening at http://127.0.0.1:' + appa.url.port)
+    console.log('server listening at http://localhost:' + appa.url.port)
   }
-  return {
-    listen: function () {
-      return http.createServer(appa).listen(appa.url.port, cb)
-    }
-  }
+  var httpServer = http.createServer(appa)
+
+  httpServer.listen = httpServer.listen.bind(httpServer, appa.url.port, cb)
+
+  return httpServer
 
 }
