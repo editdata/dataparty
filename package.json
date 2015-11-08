@@ -1,15 +1,12 @@
 {
-  "name": "nko2015-entry",
+  "name": "data-party",
   "version": "0.0.1",
-  "description": "Our soon to be awesome entry for NKO2015. Let's make something amazing.",
-  "author": "Node Knockout Team <all@nodeknockout.com>",
-  "main": "./app.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "postinstall": "node scripts/postinstall.js",
     "watch-css": "cssnext browser/assets/style.css > browser/assets/bundle.css",
     "browser": "budo browser/index.js --dir browser --live --onupdate 'npm run watch-css' --pushstate",
-    "deploy": "modulus deploy",
-    "start": "node app.js"
+    "start": "node app.js & npm run browser"
   },
   "dependencies": {
     "accounts-api": "0.1.0",
@@ -44,7 +41,6 @@
   "devDependencies": {
     "browserify": "^12.0.1",
     "cssnext": "^1.8.4",
-    "envify": "^3.4.0",
-    "modulus": "^5.0.1"
+    "envify": "^3.4.0"
   }
 }
