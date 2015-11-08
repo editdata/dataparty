@@ -43,20 +43,18 @@ router.on('/about', function (params) {
 var tree
 function init () {
   var state = store.getState()
+
   if (!state.screen) {
     state.screen = 'landing'
   }
+
   tree = loop(state, render, require('virtual-dom'))
   document.body.appendChild(tree())
-  
+
   store.subscribe(function () {
     var state = store.getState()
     tree.update(state)
   })
-  
+
   return tree
 }
-
-console.log('wat', window.location)
-
-//var tree = init()
