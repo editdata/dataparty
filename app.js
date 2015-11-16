@@ -1,5 +1,9 @@
-var app = require('./server/index')()
+var level = require('level')
+var db = level(__dirname + '/db')
+
+var config = require('./config')
+var app = require('./server')(db, config)
 var socketio = require('socket.io')(app)
-var server = {}
-require('./server/lib/realtime-editing')(socketio, server)
+require('./server/realtime-editing')(socketio, app)
+
 app.listen()
